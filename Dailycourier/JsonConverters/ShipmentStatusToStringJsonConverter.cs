@@ -1,12 +1,13 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace Dailycourier
 {
     /// <summary>
     /// A <see cref="JsonConverter{T}"/> for converting a <see cref="ShipmentStatus"/> to a <see cref="string"/>
     /// </summary>
-    public class ShipmentStatusToStringJsonConverter : JsonConverter<ShipmentStatus>
+    public class ShipmentStatusToStringJsonConverter : BaseEnumToStringJsonConverter<ShipmentStatus>
     {
         #region Constructors
 
@@ -20,27 +21,12 @@ namespace Dailycourier
 
         #endregion
 
-        #region Public Methods
+        #region Protected Methods
 
         /// <inheritdoc/>
-        public override ShipmentStatus ReadJson(JsonReader reader, Type objectType, ShipmentStatus existingValue, bool hasExistingValue, JsonSerializer serializer)
+        protected override Dictionary<ShipmentStatus, string> GetMapper()
         {
-            var value = serializer.Deserialize<string>(reader);
-
-            if (string.IsNullOrWhiteSpace(value))
-                return ShipmentStatus.AwaitingPickup;
-
-            foreach (var pair in DailycourierConstants.ShipmentStatusToStringMapper)
-                if (pair.Value == value)
-                    return pair.Key;
-
-            return ShipmentStatus.AwaitingPickup;
-        }
-
-        /// <inheritdoc/>
-        public override void WriteJson(JsonWriter writer, ShipmentStatus value, JsonSerializer serializer)
-        {
-            writer.WriteValue(DailycourierConstants.ShipmentStatusToStringMapper[value]);
+            return DailycourierConstants.ShipmentStatusToStringMapper;
         }
 
         #endregion

@@ -34,6 +34,7 @@ namespace Dailycourier
         /// The payment type
         /// </summary>
         [JsonProperty("payment_type")]
+        [JsonConverter (typeof(PaymentTypeToStringJsonConverter))]
         public PaymentType PaymentType { get; set; }
 
         /// <summary>
@@ -112,6 +113,7 @@ namespace Dailycourier
         /// A flag indicating whether the shipment can be returned or not
         /// </summary>
         [JsonProperty("return_shipment")]
+        [JsonConverter(typeof(BoolToIntJsonConverter))]
         public bool CanReturnShipment { get; set; }
 
         #endregion

@@ -51,6 +51,7 @@ namespace Dailycourier
         /// The payment type
         /// </summary>
         [JsonProperty("payment_type")]
+        [JsonConverter (typeof(PaymentTypeToStringJsonConverter))]
         public PaymentType PaymentType { get; set; }
 
         /// <summary>
