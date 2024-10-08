@@ -14,7 +14,7 @@ namespace Dailycourier
         /// The shipment numbers
         /// </summary>
         [JsonProperty("shipment_numbers")]
-        public List<string> ShipmentNumbers { get; set; }
+        public IEnumerable<string>? ShipmentNumbers { get; set; }
 
         #endregion
 

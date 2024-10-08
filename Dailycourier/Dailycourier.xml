@@ -1,0 +1,561 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dailycourier</name>
+    </assembly>
+    <members>
+        <member name="T:Dailycourier.ShipmentVoucherAPIArgs">
+            <summary>
+            Arguments used for retrieving a shipment voucher
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentVoucherAPIArgs.PrintType">
+            <summary>
+            The print type
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentVoucherAPIArgs.ShipmentNumber">
+            <summary>
+            The shipment number
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentVoucherAPIArgs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Dailycourier.CreateShipmentRequestModel">
+            <summary>
+            Request model used for creating shipments
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.CODAmount">
+            <summary>
+            Cash On Delivery amount;
+            </summary>
+            <remarks>
+            <para>
+            1. in case of non-COD(eg prepaid), this value shall be null or the cod_amount parameter, shall not be included in the call
+            </para>
+            <para>
+            2. use dot '.' for decimals and no other symbol for thousands eg 1024.64
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.PaymentType">
+            <summary>
+            The payment type
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.Comments">
+            <summary>
+            The comments
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.CollectionPointFullName">
+            <summary>
+            The full name of the collection point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.CollectionPointPhone">
+            <summary>
+            The collection point phone number
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.CollectionPointAddress">
+            <summary>
+            The address of the collection point
+            </summary>
+            <remarks>
+            Any additional address information (ie Country, City, County, Area etc), shall be concatenated after the actual address of this parameter eg "Park Lane 13, Hyde Park Corner, London, UK"
+            </remarks>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.CollectionPointPostalCode">
+            <summary>
+            The postal code of the collection point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.CollectionPointEmail">
+            <summary>
+            The email of the collection point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.DeliveryPointFullName">
+            <summary>
+            The full name of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.DeliveryPointPhone">
+            <summary>
+            The phone of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.DeliveryPointAddress">
+            <summary>
+            The address of the delivery point
+            </summary>
+            <remarks>
+            Any additional address information (ie Country, City, County, Area etc), shall be concatenated after the actual address of this parameter eg "Park Lane 13, Hyde Park Corner, London, UK"
+            </remarks>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.DeliveryPointPostalCode">
+            <summary>
+            The postal code of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.DeliveryPointEmail">
+            <summary>
+            The email of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentRequestModel.CanReturnShipment">
+            <summary>
+            A flag indicating whether the shipment can be returned or not
+            </summary>
+        </member>
+        <member name="M:Dailycourier.CreateShipmentRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Dailycourier.ShipmentsRequestModel">
+            <summary>
+            Request model used for retrieving shipments
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentsRequestModel.ShipmentNumbers">
+            <summary>
+            The shipment numbers
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentsRequestModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Dailycourier.BaseDataResponseModel`1">
+            <summary>
+            The base for all the response models that contains a <see cref="P:Dailycourier.BaseDataResponseModel`1.Data"/> property
+            </summary>
+            <typeparam name="T">The type of the data</typeparam>
+        </member>
+        <member name="P:Dailycourier.BaseDataResponseModel`1.Data">
+            <summary>
+            The data
+            </summary>
+        </member>
+        <member name="M:Dailycourier.BaseDataResponseModel`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Dailycourier.CreateShipmentResponseModel">
+            <summary>
+            Represents a created shipment
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.Id">
+            <summary>
+            The UUID
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.Number">
+            <summary>
+            The voucher number
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.Status">
+            <summary>
+            The shipment status
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.CODAmount">
+            <summary>
+            Cash On Delivery amount;
+            </summary>
+            <remarks>
+            <para>
+            1. in case of non-COD(eg prepaid), this value shall be null or the cod_amount parameter, shall not be included in the call
+            </para>
+            <para>
+            2. use dot '.' for decimals and no other symbol for thousands eg 1024.64
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.PaymentType">
+            <summary>
+            The payment type
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.Comments">
+            <summary>
+            Comments
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.CollectionPointFullName">
+            <summary>
+            The full name of the collection point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.CollectionPointPhone">
+            <summary>
+            The phone of the collection points
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.CollectionPointAddress">
+            <summary>
+            The address of the collection point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.CollectionPointPostalCode">
+            <summary>
+            The postal code of the collection point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.CollectionPointEmail">
+            <summary>
+            The email of the collection point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.DeliveryPointFullName">
+            <summary>
+            The full name of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.DeliveryPointPhone">
+            <summary>
+            The phone of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.DeliveryPointAddress">
+            <summary>
+            The address of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.DeliveryPointPostalCode">
+            <summary>
+            The postal code of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.DeliveryPointEmail">
+            <summary>
+            The email of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.CreateShipmentResponseModel.CanReturnShipment">
+            <summary>
+            A flag indicating whether the shipment can be returned or not
+            </summary>
+        </member>
+        <member name="M:Dailycourier.CreateShipmentResponseModel.#ctor">
+            <summary>
+            Default Constructor
+            </summary>
+        </member>
+        <member name="M:Dailycourier.InteralCreateShipmentResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Dailycourier.ShipmentTrackingHistoryResponseModel">
+            <summary>
+            Represents information related to a status change of a shipment tracking operation
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingHistoryResponseModel.Status">
+            <summary>
+            The status
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingHistoryResponseModel.DateTime">
+            <summary>
+            The date the status changed
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingHistoryResponseModel.UpdatedBy">
+            <summary>
+            The entity that updated the status
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingHistoryResponseModel.Comments">
+            <summary>
+            Additional information related to the change
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingHistoryResponseModel.File">
+            <summary>
+            The file
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingHistoryResponseModel.Signature">
+            <summary>
+            The signature
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentTrackingHistoryResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentTrackingHistoryResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Dailycourier.ShipmentTrackingResponseModel">
+            <summary>
+            Represents the result of a shipment tracking operation
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingResponseModel.Number">
+            <summary>
+            The number of the shipment
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingResponseModel.CollectionPointFullName">
+            <summary>
+            The full name of the collection point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingResponseModel.DeliveryPointFullName">
+            <summary>
+            The full name of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingResponseModel.DeliveryPointAddress">
+            <summary>
+            The address of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingResponseModel.DeliveryPointPostalCode">
+            <summary>
+            The postal code of the delivery point
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentTrackingResponseModel.History">
+            <summary>
+            The history array
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentTrackingResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentTrackingResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Dailycourier.ShipmentTrackingsResponseModel">
+            <summary>
+            Represents the result of multiple shipments tracking operation
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentTrackingsResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentTrackingsResponseModel.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:Dailycourier.ShipmentVoucherResponseModel">
+            <summary>
+            Represents a shipment voucher
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentVoucherResponseModel.ContentType">
+            <summary>
+            The content type
+            </summary>
+        </member>
+        <member name="P:Dailycourier.ShipmentVoucherResponseModel.Content">
+            <summary>
+            The content
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentVoucherResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Dailycourier.ShipmentVouchersResponseModel">
+            <summary>
+            Represents a collection of shipment vouchers 
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentVouchersResponseModel.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Dailycourier.APIRoutes">
+            <summary>
+            API routes related to the Dailicourier
+            </summary>
+        </member>
+        <member name="T:Dailycourier.PhoneNumber">
+            <summary>
+            Represents a phone number
+            </summary>
+        </member>
+        <member name="F:Dailycourier.PhoneNumber.ValidCharacters">
+            <summary>
+            The valid phone number characters
+            </summary>
+        </member>
+        <member name="P:Dailycourier.PhoneNumber.CountryCode">
+            <summary>
+            The country code
+            </summary>
+        </member>
+        <member name="P:Dailycourier.PhoneNumber.Phone">
+            <summary>
+            The phone
+            </summary>
+        </member>
+        <member name="M:Dailycourier.PhoneNumber.#ctor(System.Int32,System.String)">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Dailycourier.DailycourierConstants">
+            <summary>
+            Constants related to Dailycourier
+            </summary>
+        </member>
+        <member name="P:Dailycourier.DailycourierConstants.ShipmentStatusToStringMapper">
+            <summary>
+            Maps the <see cref="T:Dailycourier.ShipmentStatus"/>es to their related <see cref="T:System.String"/>s
+            </summary>
+        </member>
+        <member name="P:Dailycourier.DailycourierConstants.PaymentTypeToStringMapper">
+            <summary>
+            Maps the <see cref="T:Dailycourier.PaymentType"/>s to their related <see cref="T:System.String"/>s
+            </summary>
+        </member>
+        <member name="P:Dailycourier.DailycourierConstants.PrintTypeToStringMapper">
+            <summary>
+            Maps the <see cref="T:Dailycourier.PrintType"/>s to their related <see cref="T:System.String"/>s
+            </summary>
+        </member>
+        <member name="T:Dailycourier.PaymentType">
+            <summary>
+            Provides enumeration over the payment types
+            </summary>
+        </member>
+        <member name="F:Dailycourier.PaymentType.Cash">
+            <summary>
+            Cash payment
+            </summary>
+        </member>
+        <member name="F:Dailycourier.PaymentType.POS">
+            <summary>
+            Payment using POS or e-POS
+            </summary>
+        </member>
+        <member name="F:Dailycourier.PaymentType.Check">
+            <summary>
+            Payment using a check
+            </summary>
+        </member>
+        <member name="F:Dailycourier.PaymentType.Payment">
+            <summary>
+            Payment
+            </summary>
+        </member>
+        <member name="T:Dailycourier.PrintType">
+            <summary>
+            Provides enumeration over the print types
+            </summary>
+        </member>
+        <member name="F:Dailycourier.PrintType.Label">
+            <summary>
+            The label
+            </summary>
+        </member>
+        <member name="F:Dailycourier.PrintType.Bol">
+            <summary>
+            The bol
+            </summary>
+        </member>
+        <member name="F:Dailycourier.PrintType.Invoice">
+            <summary>
+            The invoice
+            </summary>
+        </member>
+        <member name="F:Dailycourier.PrintType.Waybill">
+            <summary>
+            The waybill
+            </summary>
+        </member>
+        <member name="T:Dailycourier.ShipmentStatus">
+            <summary>
+            Provides enumeration over the statuses of the shipment
+            </summary>
+        </member>
+        <member name="T:Dailycourier.BaseEnumToStringJsonConverter`1">
+            <summary>
+            The base for all the <see cref="T:Newtonsoft.Json.JsonConverter`1"/>s that convert between a <typeparamref name="TEnum"/>
+            an a <see cref="T:System.String"/>
+            </summary>
+            <typeparam name="TEnum">The type of the enum</typeparam>
+        </member>
+        <member name="M:Dailycourier.BaseEnumToStringJsonConverter`1.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Dailycourier.BaseEnumToStringJsonConverter`1.ReadJson(Newtonsoft.Json.JsonReader,System.Type,`0,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dailycourier.BaseEnumToStringJsonConverter`1.WriteJson(Newtonsoft.Json.JsonWriter,`0,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dailycourier.BaseEnumToStringJsonConverter`1.GetMapper">
+            <summary>
+            Gets a mapper between the <typeparamref name="TEnum"/> and their related <see cref="T:System.String"/>s
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Dailycourier.BoolToIntJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> for converting a <see cref="T:System.Boolean"/> to an <see cref="T:System.Int32"/>
+            </summary>
+        </member>
+        <member name="M:Dailycourier.BoolToIntJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Dailycourier.BoolToIntJsonConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Boolean,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Dailycourier.BoolToIntJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Dailycourier.PaymentTypeToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> for converting a <see cref="T:Dailycourier.PaymentType"/> to a <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="M:Dailycourier.PaymentTypeToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Dailycourier.PaymentTypeToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+        <member name="T:Dailycourier.ShipmentStatusToStringJsonConverter">
+            <summary>
+            A <see cref="T:Newtonsoft.Json.JsonConverter`1"/> for converting a <see cref="T:Dailycourier.ShipmentStatus"/> to a <see cref="T:System.String"/>
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentStatusToStringJsonConverter.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Dailycourier.ShipmentStatusToStringJsonConverter.GetMapper">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

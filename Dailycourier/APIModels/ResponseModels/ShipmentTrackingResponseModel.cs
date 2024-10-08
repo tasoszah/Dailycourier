@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace Dailycourier
 {
@@ -8,43 +11,112 @@ namespace Dailycourier
     /// </summary>
     public class ShipmentTrackingResponseModel
     {
+        #region Private Members
+
+        /// <summary>
+        /// The members of the <see cref="Number"/> property
+        /// </summary>
+        private string? mNumber;
+
+        /// <summary>
+        /// The members of the <see cref="CollectionPointFullName"/> property
+        /// </summary>
+        private string? mCollectionPointFullName;
+
+        /// <summary>
+        /// The members of the <see cref="DeliveryPointFullName"/> property
+        /// </summary>
+        private string? mDeliveryPointFullName;
+
+        /// <summary>
+        /// The members of the <see cref="DeliveryPointAddress"/> property
+        /// </summary>
+        private string? mDeliveryPointAddress;
+
+        /// <summary>
+        /// The members of the <see cref="DeliveryPointPostalCode"/> property
+        /// </summary>
+        private string? mDeliveryPointPostalCode;
+
+        /// <summary>
+        /// The members of the <see cref="History"/> property
+        /// </summary>
+        private IEnumerable<ShipmentTrackingHistoryResponseModel>? mHistory;
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
         /// The number of the shipment
         /// </summary>
+        [AllowNull]
         [JsonProperty("number")]
-        public string Number {  get; set; }
+        public string Number
+        {
+            get => mNumber ?? String.Empty;
+
+            set => mNumber = value;
+        }
 
         /// <summary>
         /// The full name of the collection point
         /// </summary>
+        [AllowNull]
         [JsonProperty("collection_point_full_name")]
-        public string CollectionPointFullName { get; set; }
+        public string CollectionPointFullName
+        {
+            get => mCollectionPointFullName ?? String.Empty;
+
+            set => mCollectionPointFullName = value;
+        }
 
         /// <summary>
         /// The full name of the delivery point
         /// </summary>
+        [AllowNull]
         [JsonProperty("delivery_point_full_name")]
-        public string DeliveryPointFullName { get; set; }
+        public string DeliveryPointFullName
+        {
+            get => mDeliveryPointFullName ?? String.Empty;
 
+            set => mDeliveryPointFullName = value;
+        }
         /// <summary>
         /// The address of the delivery point
         /// </summary>
+        [AllowNull]
         [JsonProperty("delivery_point_address")]
-        public string DeliveryPointAddress { get; set; }
+        public string DeliveryPointAddress
+        {
+            get => mDeliveryPointAddress ?? String.Empty;
+
+            set => mDeliveryPointAddress = value;
+        }
 
         /// <summary>
         /// The postal code of the delivery point
         /// </summary>
+        [AllowNull]
         [JsonProperty("delivery_point_postal_code")]
-        public string DeliveryPointPostalCode { get; set; }
+        public string DeliveryPointPostalCode
+        {
+            get => mDeliveryPointPostalCode ?? String.Empty;
+
+            set => mDeliveryPointPostalCode = value;
+        }
 
         /// <summary>
         /// The history array
         /// </summary>
+        [AllowNull]
         [JsonProperty("history")]
-        public List<ShipmentTrackingHistoryResponseModel> History { get; set; }
+        public IEnumerable<ShipmentTrackingHistoryResponseModel> History
+        {
+            get => mHistory ?? Enumerable.Empty<ShipmentTrackingHistoryResponseModel>();
+
+            set => mHistory = value;
+        }
 
         #endregion
 

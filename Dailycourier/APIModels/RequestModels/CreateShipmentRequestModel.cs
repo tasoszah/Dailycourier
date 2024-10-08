@@ -28,32 +28,32 @@ namespace Dailycourier
         /// </para>
         /// </remarks>
         [JsonProperty("cod_amount")]
-        public double CODAmount { get; set; }
+        public double? CODAmount { get; set; }
 
         /// <summary>
         /// The payment type
         /// </summary>
         [JsonProperty("payment_type")]
         [JsonConverter (typeof(PaymentTypeToStringJsonConverter))]
-        public PaymentType PaymentType { get; set; }
+        public PaymentType? PaymentType { get; set; }
 
         /// <summary>
         /// The comments
         /// </summary>
         [JsonProperty("comments")]
-        public string Comments { get; set; }
+        public string? Comments { get; set; }
 
         /// <summary>
         /// The full name of the collection point
         /// </summary>
         [JsonProperty("collection_point_full_name")]
-        public string CollectionPointFullName { get; set; }
+        public string? CollectionPointFullName { get; set; }
 
         /// <summary>
         /// The collection point phone number
         /// </summary>
         [JsonProperty("collection_point_phone")]
-        public PhoneNumber CollectionPointPhone { get; set; }
+        public string? CollectionPointPhone { get; set; }
 
         /// <summary>
         /// The address of the collection point
@@ -62,31 +62,31 @@ namespace Dailycourier
         /// Any additional address information (ie Country, City, County, Area etc), shall be concatenated after the actual address of this parameter eg "Park Lane 13, Hyde Park Corner, London, UK"
         /// </remarks>
         [JsonProperty("collection_point_address")]
-        public string CollectionPointAddress { get; set; }
+        public string? CollectionPointAddress { get; set; }
 
         /// <summary>
         /// The postal code of the collection point
         /// </summary>
         [JsonProperty("collection_point_postal_code")]
-        public string CollectionPointPostalCode { get; set; }
+        public string? CollectionPointPostalCode { get; set; }
 
         /// <summary>
         /// The email of the collection point
         /// </summary>
         [JsonProperty("collection_point_email")]
-        public string CollectionPointEmail { get; set; }
+        public string? CollectionPointEmail { get; set; }
 
         /// <summary>
         /// The full name of the delivery point
         /// </summary>
         [JsonProperty("delivery_point_full_name")]
-        public string DeliveryPointFullName { get; set; }
+        public string? DeliveryPointFullName { get; set; }
 
         /// <summary>
         /// The phone of the delivery point
         /// </summary>
         [JsonProperty("delivery_point_phone")]
-        public PhoneNumber DeliveryPointPhone { get; set; }
+        public string? DeliveryPointPhone { get; set; }
 
         /// <summary>
         /// The address of the delivery point
@@ -95,19 +95,19 @@ namespace Dailycourier
         /// Any additional address information (ie Country, City, County, Area etc), shall be concatenated after the actual address of this parameter eg "Park Lane 13, Hyde Park Corner, London, UK"
         /// </remarks>
         [JsonProperty("delivery_point_address")]
-        public string DeliveryPointAddress { get; set; }
+        public string? DeliveryPointAddress { get; set; }
 
         /// <summary>
         /// The postal code of the delivery point
         /// </summary>
         [JsonProperty("delivery_point_postal_code")]
-        public string DeliveryPointPostalCode { get; set; }
+        public string? DeliveryPointPostalCode { get; set; }
 
         /// <summary>
         /// The email of the delivery point
         /// </summary>
         [JsonProperty("delivery_point_email")]
-        public string DeliveryPointEmail { get; set; }
+        public string? DeliveryPointEmail { get; set; }
 
         /// <summary>
         /// A flag indicating whether the shipment can be returned or not
