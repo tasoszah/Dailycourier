@@ -10,12 +10,12 @@
         /// <summary>
         /// The print type
         /// </summary>
-        public PrintType PrintType { get; set; }
+        public PrintType? PrintType { get; set; }
 
         /// <summary>
         /// The shipment number
         /// </summary>
-        public string ShipmentNumber { get; set; }
+        public string? ShipmentNumber { get; set; }
 
         #endregion
 

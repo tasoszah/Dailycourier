@@ -32,7 +32,7 @@ namespace Dailycourier
         [JsonProperty("content-type")]
         public string ContentType
         {
-            get => mContentType ?? String.Empty;
+            get => mContentType ?? string.Empty;
 
             set => mContentType = value;
         }
@@ -44,7 +44,7 @@ namespace Dailycourier
         [JsonProperty("content")]
         public string Content
         {
-            get => mContent ?? String.Empty;
+            get => mContent ?? string.Empty;
 
             set => mContent = value;
         }

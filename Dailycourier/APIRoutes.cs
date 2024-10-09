@@ -25,7 +25,7 @@ namespace Dailycourier
 
         public static string CreateShipmentRoute(bool shouldUseTestEnvironment) => $"{GetBaseRoute(shouldUseTestEnvironment)}/shipments";
 
-        public static string GetShipmentsTracking(bool shouldUseTestEnvironment) => $"{GetBaseRoute(shouldUseTestEnvironment)}/shipments/tracking";
+        public static string GetShipmentsTrackingRoute(bool shouldUseTestEnvironment) => $"{GetBaseRoute(shouldUseTestEnvironment)}/shipments/tracking";
 
         public static string GetShipmentTrackingRoute(bool shouldUseTestEnvironment, string shipmentNumber) => $"{GetBaseRoute(shouldUseTestEnvironment)}/shipments/tracking/{shipmentNumber}";
 

@@ -54,7 +54,7 @@ namespace Dailycourier
         [JsonProperty("number")]
         public string Number
         {
-            get => mNumber ?? String.Empty;
+            get => mNumber ?? string.Empty;
 
             set => mNumber = value;
         }
@@ -66,7 +66,7 @@ namespace Dailycourier
         [JsonProperty("collection_point_full_name")]
         public string CollectionPointFullName
         {
-            get => mCollectionPointFullName ?? String.Empty;
+            get => mCollectionPointFullName ?? string.Empty;
 
             set => mCollectionPointFullName = value;
         }
@@ -78,7 +78,7 @@ namespace Dailycourier
         [JsonProperty("delivery_point_full_name")]
         public string DeliveryPointFullName
         {
-            get => mDeliveryPointFullName ?? String.Empty;
+            get => mDeliveryPointFullName ?? string.Empty;
 
             set => mDeliveryPointFullName = value;
         }
@@ -89,7 +89,7 @@ namespace Dailycourier
         [JsonProperty("delivery_point_address")]
         public string DeliveryPointAddress
         {
-            get => mDeliveryPointAddress ?? String.Empty;
+            get => mDeliveryPointAddress ?? string.Empty;
 
             set => mDeliveryPointAddress = value;
         }
@@ -101,7 +101,7 @@ namespace Dailycourier
         [JsonProperty("delivery_point_postal_code")]
         public string DeliveryPointPostalCode
         {
-            get => mDeliveryPointPostalCode ?? String.Empty;
+            get => mDeliveryPointPostalCode ?? string.Empty;
 
             set => mDeliveryPointPostalCode = value;
         }

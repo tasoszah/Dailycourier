@@ -30,7 +30,7 @@ namespace Dailycourier
         #region Public Methods
 
         /// <inheritdoc/>
-        public override sealed TEnum ReadJson(JsonReader reader, Type objectType, TEnum existingValue, bool hasExistingValue, JsonSerializer serializer)
+        public override sealed TEnum? ReadJson(JsonReader reader, Type objectType, TEnum? existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             var value = serializer.Deserialize<string>(reader);
 
@@ -45,8 +45,11 @@ namespace Dailycourier
         }
 
         /// <inheritdoc/>
-        public override sealed void WriteJson(JsonWriter writer, TEnum value, JsonSerializer serializer)
+        public override sealed void WriteJson(JsonWriter writer, TEnum? value, JsonSerializer serializer)
         {
+            if (value is null)
+                return;
+
             writer.WriteValue(GetMapper()[value]);
         }
 

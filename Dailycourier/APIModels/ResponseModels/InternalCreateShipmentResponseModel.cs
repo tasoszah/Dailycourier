@@ -1,14 +1,12 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dailycourier
 {
-    public class InteralCreateShipmentResponseModel
+    /// <summary>
+    /// An internal wrapper for the <see cref="CreateShipmentResponseModel"/>
+    /// </summary>
+    internal class InternalCreateShipmentResponseModel
     {
         #region Private Members
 
@@ -16,6 +14,11 @@ namespace Dailycourier
         /// The member of the <see cref="Message"/> property
         /// </summary>
         private string? mMessage;
+
+        /// <summary>
+        /// The member of the <see cref="Data"/> property
+        /// </summary>
+        private CreateShipmentResponseModel? mData;
 
         #endregion
 
@@ -34,7 +37,7 @@ namespace Dailycourier
         [JsonProperty("message")]
         public string Message
         {
-            get => mMessage ?? String.Empty;
+            get => mMessage ?? string.Empty;
 
             set => mMessage = value;
         }
@@ -42,8 +45,14 @@ namespace Dailycourier
         /// <summary>
         /// The data as represented in the <see cref="CreateShipmentRequestModel"/>
         /// </summary>
+        [AllowNull]
         [JsonProperty("data")]
-        public CreateShipmentResponseModel? Data { get; set; }
+        public CreateShipmentResponseModel Data
+        {
+            get => mData ??= new CreateShipmentResponseModel();
+
+            set => mData = value;
+        }
 
         #endregion
 
@@ -52,9 +61,9 @@ namespace Dailycourier
         /// <summary>
         /// Default constructor
         /// </summary>
-        public InteralCreateShipmentResponseModel() : base()
+        public InternalCreateShipmentResponseModel() : base()
         {
-
+            
         }
 
         #endregion

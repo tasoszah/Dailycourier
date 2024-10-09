@@ -49,7 +49,7 @@ namespace Dailycourier
         [JsonProperty("updated_by")]
         public string UpdatedBy
         {
-            get => mUpdatedBy ?? String.Empty;
+            get => mUpdatedBy ?? string.Empty;
 
             set => mUpdatedBy = value;
         }
@@ -61,7 +61,7 @@ namespace Dailycourier
         [JsonProperty("comments")]
         public string Comments
         {
-            get => mComments ?? String.Empty;
+            get => mComments ?? string.Empty;
 
             set => mComments = value;
         }
